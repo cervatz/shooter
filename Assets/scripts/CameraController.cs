@@ -11,8 +11,6 @@ public class CameraController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-//		transform.Translate(Vector3.up * Time.deltaTime);
-
-		transform.Rotate(Vector3.right * Time.deltaTime);
+//		transform.Rotate(Vector3.right * Time.deltaTime);
 	}
 }

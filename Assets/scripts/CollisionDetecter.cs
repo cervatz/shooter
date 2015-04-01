@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CollisionDetecter : MonoBehaviour {
 
+	public GameObject deathAnimation; 
+
 	public AudioClip sound1;
 
 	// Use this for initialization
@@ -18,9 +20,11 @@ public class CollisionDetecter : MonoBehaviour {
 	void OnCollisionEnter(Collision col) {
 		Debug.Log("collision!");
 		Debug.Log(col.collider.name);
+
 		if (col.collider.name == "Sphere") {
 			Destroy(gameObject);
 			AudioSource.PlayClipAtPoint(sound1, Camera.main.transform.position);
+			Instantiate(deathAnimation, transform.position, Quaternion.identity);
 		}
 
 	}
